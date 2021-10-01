@@ -153,12 +153,12 @@ const login =()=>{
     //   renderSummary();
     //       })
     // .catch((err) => alert(err));
-    renderUserInfo(JSON.parse(user));
+    renderUserInfo(user);
     renderSummary();
 }
 
 //const displayUserDetails = () =>document.querySelector("#main-content").innerHTML = new UserInfo(JSON.parse(window.localStorage.getItem("user"))).details;
-const displayUserDetails = () =>document.querySelector("#main-content").innerHTML = new UserInfo(JSON.parse(user)).details
+const displayUserDetails = () =>document.querySelector("#main-content").innerHTML = new UserInfo(user).details
 
 //window.localStorage.getItem("user")==!null?renderUserInfo(JSON.parse(window.localStorage.getItem("user"))):login();
 
