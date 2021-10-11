@@ -2,9 +2,9 @@
 
 
 const registerPersonalInfo = ()=>{
-    const inputFeilds = document.querySelectorAll("input");
+    let inputFeilds = document.querySelectorAll("input");
 
-    const invalidInputs = Array.from(inputFeilds).filter( input => input.value == "")
+    let invalidInputs = Array.from(inputFeilds).filter( input => input.value == "")
    if(invalidInputs.length==0) {
         const firstNameInput  =   document.querySelector("#firstNameInput");
         const lastNameInput  =  document.querySelector("#lastNameInput");
@@ -35,9 +35,18 @@ const registerPersonalInfo = ()=>{
     ;  
 
 const loadAppPage = data=>{
+    //let inputFeilds = document.querySelectorAll("input");
+
+    //let invalidInputs = Array.from(inputFeilds).filter( input => input.value == "")
+   //if(invalidInputs.length==0) {
     window.location.href = "member_home.html";
     sessionStorage.clear()
     sessionStorage.setItem("phone",data)
+    
+    completeRegistration(); 
+// }else{
+//     alert(`${invalidInputs.length} fields are empty`)
+// }
 }
 
 const completeRegistration = ()=>fetch("http://"+hostname+"/peaberry/create_user.php?payload="+JSON.stringify(sessionStorage))

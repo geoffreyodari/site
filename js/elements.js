@@ -118,7 +118,7 @@ class Summary {
                           <div class="col mr-2">
                               <div class="text-xs font-weight-bold text-coffee text-uppercase mb-1">
                                   Produce (Year to Date)</div>
-                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Kgs) ${this.data.map(data =>data.weight).reduce((a,b)=>a+b)}</div>
+                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Kgs) ${this.data.length==0?0:this.data.map(data =>data.weight).reduce((a,b)=>a+b)}</div>
                           </div>
                           <div class="col-auto">
                               <i class="fas fa-weight fa-2x text-gray-300"></i>
@@ -136,7 +136,7 @@ class Summary {
                           <div class="col mr-2">
                               <div class="text-xs font-weight-bold text-coffee text-uppercase mb-1">
                                   Earnings (Year to Date)</div>
-                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Kes) ${this.data.map(data =>data.weight).reduce((a,b)=>a+b)*this.prevPrice}*</div>
+                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Ksh) ${this.data.length==0?0:this.data.map(data =>data.weight).reduce((a,b)=>a+b)*this.prevPrice}*</div>
                           </div>
                           <div class="col-auto">
                               <i class="fas fa-piggy-bank fa-2x text-gray-300"></i>
@@ -158,7 +158,7 @@ class Summary {
                               </div>
                               <div class="row no-gutters align-items-center">
                                   <div class="col-auto">
-                                      <div class="h5 mb-0 mr-3 font-weight-bold text-dark-900">(Kes) 20,000</div>
+                                      <div class="h5 mb-0 mr-3 font-weight-bold text-dark-900">(Ksh) 20,000</div>
                                   </div>
                               </div>
                           </div>
@@ -177,8 +177,8 @@ class Summary {
                       <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
                               <div class="text-xs font-weight-bold text-coffee text-uppercase mb-1">
-                                  Qualify for Loans</div>
-                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Kes) ${this.data.map(data =>data.weight).reduce((a,b)=>a+b)*this.prevPrice*this.limit}</div>
+                                  Loan Qualification</div>
+                              <div class="h5 mb-0 font-weight-bold text-dark-900">(Ksh) ${this.data.length==0?0:this.data.map(data =>data.weight).reduce((a,b)=>a+b)*this.prevPrice*this.limit}</div>
                           </div>
                           <div class="col-auto">
                               <i class="fa fa-money fa-2x text-gray-300"></i>

@@ -188,10 +188,9 @@ const aICamera =()=> document.querySelector("#main-content").innerHTML=`
 const loadUserProfile = phone=>{
   fetch("http://"+hostname+"/peaberry/get_user.php?phone="+phone)
   .then(response=>response.json())
-  .then(data=>{
-    renderUser(data)
-    console.log(data)
-    sessionStorage.setItem("user",JSON.stringify(data))
+  .then(data=>{renderUser(data)
+              console.log(data)
+              sessionStorage.setItem("user",JSON.stringify(data))
   })
   
 
@@ -207,7 +206,7 @@ const loadCalendar = ()=>{
     
     
   })
-  .catch(err=>console.log(err))
+  //.catch(err=>alert(err))
 }
 
 const loadCounty =()=>fetch("http://"+hostname+"/peaberry/get_county.php")
@@ -215,7 +214,7 @@ const loadCounty =()=>fetch("http://"+hostname+"/peaberry/get_county.php")
 .then(data=>{
   console.log(data)
 })
-.catch(err=>console.log(err))
+//.catch(err=>alert(err))
 
 
 
@@ -226,7 +225,7 @@ const loadUserCollections = ()=>{
     console.log(data)
     renderTable(data)
   })
-  .catch(err=>console.log(err))
+  //.catch(err=>alert(err))
   
 
 }
@@ -235,7 +234,7 @@ const loan= ()=>{
   fetch("http://"+hostname+"/peaberry/collections.php?phone="+sessionStorage.getItem("phone"))
   .then(response=>response.json())
   .then(data=>RenderLoanPage(data))
-  .catch(err=>console.log(err))
+  //.catch(err=>alert(err))
   
 
 }
@@ -244,7 +243,7 @@ const summary= ()=>{
   fetch("http://"+hostname+"/peaberry/collections.php?phone="+sessionStorage.getItem("phone"))
   .then(response=>response.json())
   .then(data=>renderSummary(data))
-  .catch(err=>console.log(err))
+  //.catch(err=>alert(err))
   
 
 }

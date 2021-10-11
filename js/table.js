@@ -5,12 +5,12 @@ class CreateTable  {
     }
 
     row(){
-        return this.data.map(data=>`<tr><td>${data.date}</td><td>${data.grade}</td><td>${data.weight}</td></tr>`).join("")
+        return this.data.length==0?0:this.data.map(data=>`<tr><td>${data.date}</td><td>${data.grade}</td><td>${data.weight}</td></tr>`).join("")
     }
 
     get body(){
       return   `<h1 class="h3 mb-2 text-dark-900">My Produce</h1>
-                        <p class="mb-4"> All your coffee harvest  delovered and weighed at the factory will appear here</div>      
+                        <p class="mb-4"> All your coffee harvest  delivered and weighed at the factory will appear here</div>      
                                 <table class="table  text-xs " id="dataTable" width="100%" cellspacing="0">
                                     <thead class="bg-coffee text-white">
                                         <tr>
@@ -25,7 +25,7 @@ class CreateTable  {
                                          <th>Total</th>
                                          
                                          <th></th>
-                                         <th>${this.data.map(data=>data.weight).reduce((a,b)=>a+b)}</th>
+                                         <th>${this.data.length==0?0:this.data.map(data=>data.weight).reduce((a,b)=>a+b)}</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
